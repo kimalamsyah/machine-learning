@@ -1,5 +1,8 @@
 #costFunction with regularization
 def costFunctionReg(theta, X, y, l):
+    #adding bias terms of ones to X and theta
+    
+    
     #initializing terms
     m = X.shape[0]
     h = sigmoid(X.dot(theta))
@@ -13,4 +16,4 @@ def costFunctionReg(theta, X, y, l):
     grad = (1/m) * ((X.transpose().dot(delta)) + ((1 / m) * theta))
     grad[0] = 0
 
-    return J, grad.flatten()
+    return np.array(J), grad.flatten()
