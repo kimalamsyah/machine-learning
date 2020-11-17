@@ -1,7 +1,11 @@
 #costFunction with regularization
 def costFunctionReg(theta, X, y, l):
-    #adding bias terms of ones to X and theta
+    #adding intercept terms of ones to X and zeros to theta
+    theta_zeros = np.zeros((1 ,1))
+    theta = np.vstack((theta_zeros, theta))
     
+    intercept = np.ones((X.shape[0], 1))
+    X = np.hstack((intercept, X))
     
     #initializing terms
     m = X.shape[0]
