@@ -1,4 +1,3 @@
-#costFunction with regularization
 def costFunctionReg(theta, X, y, l):
     #initializing terms
     m = X.shape[1]
@@ -14,7 +13,7 @@ def costFunctionReg(theta, X, y, l):
     delta = np.subtract(h, y)
     sumdelta = np.sum(delta)
     
-    grad = (1 / m) * (sumdelta * X.transpose()) + (l / m) * thetaR
+    grad = ((1/m) * (delta.transpose() * X)) + ((1 / m) * (thetaR[:, None]))
     grad[0] = 0
 
     return J, grad.flatten()
