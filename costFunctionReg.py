@@ -1,6 +1,6 @@
 def costFunctionReg(theta, X, y, l):
     #initializing terms
-    m = X.shape[1]
+    m = X.shape[0]
     h = sigmoid(X.dot(theta))
 
     thetaR = theta[1:, 0]
